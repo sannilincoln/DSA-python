@@ -39,7 +39,7 @@ arr.insertEnd(1)
 arr.insertEnd(1)
 arr.insertEnd(1)
 
-# arr.insertAtN(2, 4)
+arr.insertAtN(2, 56)
 
 arr.printMylist()
-# print("a"arr.count)
+print("size  is {}".format(arr.count))
