@@ -1,30 +1,45 @@
 
-
-from imp import NullImporter
-
-
 class MyList:
+    count = 0
 
-    def __init__(self, items):
-        self.items = items
-        self.count = len(items)
+    def __init__(self, items,):
+        self.items = [items]
+
+    # def count(self):
+    #     return len(self.items)
 
     def printMylist(self):
-        # for i in self.items:
-        #     print(i)
-
-        print(self.count)
+        for i in self.items:
+            print(i)
 
     def insertEnd(self, e):
-        self.items[self.count] = e
+        self.items.append(e)
+        MyList.count += 1
 
-    # def insertAtN(self,n,e):
-    #     for i in self.items:
+    def insertAtN(self, n, e):
+        movingIndex = MyList.count
+        while (movingIndex > n):
+            self.items[movingIndex] = self.items[movingIndex - 1]
+            movingIndex -= 1
 
-    def removeAtN(self, n):
-        self.items.reomove(n)
+        self.items[n] = e
+
+        MyList.count += 1
+
+    # def removeAtN(self, n):
+    #     self.items.remove(n)
 
 
 arr = MyList([])
+arr.insertEnd(1)
+arr.insertEnd(1)
+arr.insertEnd(1)
+arr.insertEnd(1)
+arr.insertEnd(1)
+arr.insertEnd(1)
+arr.insertEnd(1)
+
+# arr.insertAtN(2, 4)
 
 arr.printMylist()
+# print("a"arr.count)
